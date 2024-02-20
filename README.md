@@ -1,6 +1,6 @@
 # WebAuthn Models
 
-This repository contains the public interface files from the [WebAuthn Swift](https://github.com/swift-server/webauthn-swift) project, designed to facilitate the integration and use of WebAuthn in Swift applications. It aims to provide developers with quick access to the interfaces needed for implementing web authentication standards in their Swift projects. The files are based on the original `webauthn-swift` project, with modifications to suit specific integration requirements or to provide enhanced accessibility.
+This repository contains the public interface files from the [WebAuthn Swift](https://github.com/swift-server/webauthn-swift) project, designed to facilitate the integration and use of WebAuthn in Swift applications. It aims to provide developers with quick access to the interfaces needed for implementing web authentication standards in their iOS projects. The files are based on the original `webauthn-swift` project, with modifications to suit specific integration requirements or to provide enhanced accessibility.
 
 ## License
 
