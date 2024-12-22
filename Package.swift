@@ -12,18 +12,18 @@ let package = Package(
         .library(
             name: "WebAuthnModels",
             targets: ["WebAuthnModels"]
+        ),
+        .library(
+            name: "Base64Swift",
+            targets: ["Base64Swift"]
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-crypto.git", from: "2.6.0"),
-        .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0")
+        .package(url: "https://github.com/apple/swift-crypto.git", .upToNextMinor(from: "2.6.0"))
     ],
     targets: [
         .target(
-            name: "Base64Swift",
-            dependencies: [
-                .product(name: "Logging", package: "swift-log")
-            ]
+            name: "Base64Swift"
         ),
         .target(
             name: "WebAuthnModels",

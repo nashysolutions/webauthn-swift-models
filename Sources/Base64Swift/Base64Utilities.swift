@@ -16,7 +16,6 @@
 //===----------------------------------------------------------------------===//
 
 import Foundation
-import Logging
 
 /// A structure representing a value encoded in Base64 format.
 public struct EncodedBase64: Codable, Hashable, Equatable, ExpressibleByStringLiteral {
