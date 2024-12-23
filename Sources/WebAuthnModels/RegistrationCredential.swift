@@ -56,13 +56,7 @@ extension RegistrationCredential: Codable {
         let id = try container.decode(URLEncodedBase64.self, forKey: .id)
         let type = try container.decode(String.self, forKey: .type)
         
-        guard let rawID = try container.decode(URLEncodedBase64.self, forKey: .rawID).decodedBytes else {
-            throw DecodingError.dataCorruptedError(
-                forKey: .rawID,
-                in: container,
-                debugDescription: "Failed to decode base64url encoded rawID into bytes"
-            )
-        }
+        let rawID = try container.decode(URLEncodedBase64.self, forKey: .rawID).bytes
         
         let attestationResponse = try container.decode(AuthenticatorAttestationResponse.self, forKey: .attestationResponse)
         self.init(id: id, type: type, rawID: rawID, attestationResponse: attestationResponse)

@@ -12,31 +12,19 @@ let package = Package(
         .library(
             name: "WebAuthnModels",
             targets: ["WebAuthnModels"]
-        ),
-        .library(
-            name: "Base64Swift",
-            targets: ["Base64Swift"]
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-crypto.git", .upToNextMinor(from: "2.6.0"))
+        .package(url: "https://github.com/apple/swift-crypto.git", .upToNextMinor(from: "2.6.0")),
+        .package(url: "https://github.com/nashysolutions/base64-swift.git", .upToNextMinor(from: "1.0.0"))
     ],
     targets: [
         .target(
-            name: "Base64Swift"
-        ),
-        .target(
             name: "WebAuthnModels",
             dependencies: [
-                .target(name: "Base64Swift"),
+                .product(name: "Base64Swift", package: "base64-swift"),
                 .product(name: "Crypto", package: "swift-crypto"),
                 .product(name: "_CryptoExtras", package: "swift-crypto")
-            ]
-        ),
-        .testTarget(
-            name: "Base64SwiftTests",
-            dependencies: [
-                .target(name: "Base64Swift")
             ]
         )
     ]
